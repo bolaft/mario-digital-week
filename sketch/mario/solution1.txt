@@ -1,0 +1,28 @@
+si mario a la clef et variable1 est fausse alors
+	mario court à gauche
+	variable2 prend la valeur de faux
+sinon
+	mario court à droite
+	variable2 prend la valeur de vrai
+fin si
+
+pour chaque monstre
+	si variable2 est vraie alors
+		si monstre.x moins mario.x < 35 et monstre.x > mario.x alors
+			mario saute
+		fin si
+	sinon
+		si monstre.x moins mario.x > -35 et monstre.x - mario.x < 0 alors
+			mario saute
+		fin si
+	fin si
+fin pour
+
+si mario.x est égal à mario.precedent.x alors
+	mario saute
+fin si
+
+si mario peut traverser et mario a la clef et variable1 est fausse alors
+	mario se baisse
+	variable1 prend la valeur de vrai
+fin si

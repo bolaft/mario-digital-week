@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Fête de la Science - 2016</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <link rel="stylesheet" href="css/cv.css">
+        <!--[if lt IE 9]>
+            <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="js/processing.js"></script>
+        <script type="text/javascript" src="js/minim.js"></script>
+        <script type="text/javascript" src="js/canvasFocus.js"></script>
+        <script type="text/javascript" src="js/editor.js"></script>
+
+        <style type="text/css">
+            li {
+                font-size: 90% !important;
+            }
+
+            li > ul > li {
+                font-size: 80% !important;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <section>
+                        <canvas id="mario_canvas"
+                                width="800"
+                                height="432"
+                                data-processing-sources=" sketch/mario/preloads.pde
+                                                          sketch/mario/codebase.pde
+                                                          sketch/mario/mario.pde
+                                                          sketch/mario/algo.pde
+
+                                                          sketch/mario/level/mariolevel.pde
+                                                          sketch/mario/level/levels_bonuslevel.pde
+                                                          sketch/mario/level/levels_darklevel.pde
+                                                          sketch/mario/level/levels_mainlevel.pde
+
+                                                          sketch/mario/layer/mariolayer.pde
+                                                          sketch/mario/layer/layers_background.pde
+                                                          sketch/mario/layer/layers_bonuslayer.pde
+                                                          sketch/mario/layer/layers_bonuslayer_bg.pde
+                                                          sketch/mario/layer/layers_colorlayer.pde
+                                                          sketch/mario/layer/layers_darklevellayer.pde
+                                                          sketch/mario/layer/layers_mainlayer.pde
+
+                                                          sketch/mario/actor/hero.pde
+
+                                                          sketch/mario/actor/enemy/enemy.pde
+                                                          sketch/mario/actor/enemy/enemy_banzaibill.pde
+                                                          sketch/mario/actor/enemy/enemy_bonustarget.pde
+                                                          sketch/mario/actor/enemy/enemy_koopa.pde
+                                                          sketch/mario/actor/enemy/enemy_muncher.pde
+
+                                                          sketch/mario/specials/specials_block.pde
+                                                          sketch/mario/specials/specials_keys.pde
+                                                          sketch/mario/specials/specials_tubes.pde
+                                                          sketch/mario/specials/pickups.pde
+                                                          sketch/mario/specials/triggers.pde"
+                                tabindex="1">
+                        </canvas>
+                        <small>
+                        <!-- <div style="float:left">
+                        <ul>
+                            <li>Informations (variables) connues :
+                                <ul>
+                                    <li>liste de monstres</li>
+                                    <li>la position horizontale et verticale du scaphandrier et de chaque monstre</li>
+                                    <li>idem, mais à la <em>frame</em> précédente</li>
+                                    <li>si le scaphandrier a la clef</li>
+                                    <li>si le scaphandrier peut traverser une canalisation</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                        <ul style="text-align: right">
+                            <li>Actions (fonctions) possibles :
+                                <ul>
+                                    <li>courir à droite</li>
+                                    <li>courir à gauche</li>
+                                    <li>sauter</li>
+                                    <li>se baisser</li>
+                                </ul>
+                            </li>
+                        </ul>
+</small> -->
+                    </section>
+                </section>
+<!-- 
+                <section>
+                    <section>
+                        <h3>Language &amp; tutos :</h3>
+                        <div>processing.org</div>
+                        <div>processingjs.org</div>
+                        <br>
+                        <h3>Sources :</h3>
+                        <div>github.com/Pomax/Pjs-2D-Game-Engine</div>
+                        <div>github.com/bolaft/fdls</div>
+                    </section>
+                </section> -->
+            </div>
+
+        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="js/processing.js"></script>
+        <script type="text/javascript" src="js/processing-lazyload.js"></script>
+        <script type="text/javascript" src="js/minim.js"></script>
+        <script type="text/javascript" src="js/syntaxHighlight.js"></script>
+        <script type="text/javascript" src="js/canvasFocus.js"></script>
+            <script src="lib/js/head.min.js"></script>
+            <script src="js/reveal.min.js"></script>
+            <script>
+                Reveal.initialize({
+                    controls: true,
+                    progress: true,
+                    history: true,
+                    center: true,
+                    rollingLinks: false,
+
+                    theme: Reveal.getQueryHash().theme,
+                    transition: Reveal.getQueryHash().transition || 'linear',
+                    dependencies: [{
+                        src: 'lib/js/classList.js',
+                        condition: function() {
+                            return !document.body.classList;
+                        }
+                    }, {
+                        src: 'plugin/markdown/showdown.js',
+                        condition: function() {
+                            return !!document.querySelector('[data-markdown]');
+                        }
+                    }, {
+                        src: 'plugin/markdown/markdown.js',
+                        condition: function() {
+                            return !!document.querySelector('[data-markdown]');
+                        }
+                    }/*, {
+                        src: 'plugin/highlight/highlight.js',
+                        async: true,
+                        callback: function() {
+                            hljs.initHighlightingOnLoad();
+                        }
+                    }*/, {
+                        src: 'plugin/zoom-js/zoom.js',
+                        async: false,
+                        condition: function() {
+                            return !!document.body.classList;
+                        }
+                    }, {
+                        src: 'plugin/notes/notes.js',
+                        async: false,
+                        condition: function() {
+                            return !!document.body.classList;
+                        }
+                    }
+                    ]
+                });
+            </script>
+    </body>
+</html>

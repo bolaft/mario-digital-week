@@ -1,0 +1,509 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Fête de la Science - 2016</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <link rel="stylesheet" href="css/cv.css">
+        <!--[if lt IE 9]>
+            <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="js/processing.js"></script>
+        <script type="text/javascript" src="js/minim.js"></script>
+        <script type="text/javascript" src="js/canvasFocus.js"></script>
+        <script type="text/javascript" src="js/editor.js"></script>
+
+        <style type="text/css">
+            li {
+                font-size: 90% !important;
+            }
+
+            li > ul > li {
+                font-size: 80% !important;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+
+                    <section>
+                        <img src="img/mario.png" alt="mario" width="250px" style="box-shadow: 0 0 0px">
+                        <h1>Un algo pour Mario</h1>
+                    </section>
+
+                    <section>
+                        <h3>Au programme :</h3>
+                        <ul>
+                            <li>Qu'est ce qu'un algorithme ? (~5 minutes)</li>
+                            <li>Les bases pour construire un algorithme (~5 minutes)</li>
+                            <li>À vous de jouer : contrôlez Mario avec un algorithme ! (~30 minutes)</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+
+                    <section>
+                        <h2>Qu'est ce qu'un algorithme ?</h2>
+                    </section>
+
+                    <section>
+                        <h3>Généralités</h3>
+                        <ul>
+                            <li class="fragment">Fondamentaux :
+                                <ul>
+                                    <li>Une méthode systématique à appliquer pour résoudre un problème donné</li>
+                                    <li>Exemple : écrire une recette de cuisine, indiquer son chemin à quelqu'un...</li>
+                                    <li>Uniquement des instructions compréhensibles par celui qui l'exécute</li>
+                                    <li>Pratique pour les programmes informatiques</li>
+                                </ul>
+                            </li>
+                            <hr>
+                            <div class="fragment">
+                            <div style="float:left; width:50%">
+                            <li>Historique :
+                                <ul>
+                                    <li>Forme latine (Algorismus) du nom du mathématicien Al Khwarizmi <br>(VIIIe siècle)</li>
+                                    <li>Plus ancien algorithme connu : l'algorithme d'Euclide (300 av. J.-C)</li>
+                                </ul>
+                            </li>
+                            </div>
+                            <div style="float:left; width:50%">
+                                <img src="img/numbers.jpg">
+                            </div>
+                            </div>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Le principe</h3>
+                        <ul>
+                            <li>On cherche à produire un résultat à partir d'éléments connus</li>
+                            <img src="img/algo.png">
+                        </ul>
+                    </section>
+                   
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Comment construire un algorithme</h2>
+
+                        <div class="fragment">
+                            <p>
+                            Un algorithme est constitué de plusieurs éléments
+                            <ul>
+                                <li class="fragment">Les variables</li>
+                                <li class="fragment">Les conditions</li>
+                                <li class="fragment">Les boucles</li>
+                                <!-- <li class="fragment">Les fonctions</li> -->
+                            </ul>
+                            </p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h4>Un mot sur le jeu vidéo...</h4>
+                        <p class="fragment">
+                            Ce qui se passe à l'écran est le résultat du code que vous dictez 
+                        </p>
+                        <p class="fragment">
+                        Le code est executé 25 fois par seconde !
+                        </p>
+                        <div class="fragment">
+                        <p>
+                            <br>
+                            <div style="width:30%;float: left;">
+                                <img src="img/mario1.png">
+                            </div>
+                            <div style="width:4%;float: left;">
+                                ...
+                            </div>
+                            <div style="width:32%;float: left;">
+                                <img src="img/mario2.png">
+                            </div>
+                            <div style="width:4%;float: left;">
+                                ...
+                            </div>
+                            <div style="width:30%;float: left;">
+                                <img src="img/mario3.png">
+                            </div>
+                        </p>
+                        </div>
+                        <div style="clear:both;">
+                        <p class="fragment">
+                        C'est ce qu'on appelle la boucle de jeu
+                        </p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <p>Les objets à l'écran ont une position en pixels</p>
+                        <div style="width:60%;margin:auto;">
+                            <img src="img/coordinate_plane.png">
+                        </div>
+                    </section>
+
+
+                    <section>
+                        <h3>Les variables</h3>
+                    </section>
+
+                    <section>
+                        <h4>Types de variables</h4>
+                        <div class="fragment">
+                            <strong>Types simples</strong>
+                            <br>
+                            <br>
+
+                            <div class="fragment">
+                            <p>Nombres entiers</p>
+                            <pre><code>1, 2, 3, 100000</code></pre>
+                            </div>
+                            
+                            <div class="fragment">
+                            <p>Booléens</p>
+                            <pre><code>VRAI ou FAUX  /  1 ou 0</code></pre>
+                            </div>
+
+                            <div class="fragment">
+                            <p>Et d'autres : décimaux, chaînes de caractères...</p>
+                            <pre><code>3.14, 2.5, 0.000002</code></pre>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <section>
+                        <h4>Types de variables</h4>
+                        <div class="fragment">
+                            <strong>Types complexes</strong>
+                            <br>
+                            <br>
+                            <div class="fragment">
+                            <p>Listes</p>
+                            <pre><code>[2, 2, 1, 3, 10, 1, 7, 10]</code></pre>
+                            </div>
+
+                            <div class="fragment">
+                            <p>Et d'autres : listes ordonnées, ensembles, objets...</p>
+                            </div>
+
+                            <!-- <div class="fragment">
+                            <p>Ce que vous voulez !</p>
+                            <pre><code>{
+ 10
+ [1, 2, 3]
+ {"x", "y", "z"}
+}</code></pre>
+                            </div> -->
+                        </div>
+                    </section>
+
+                    <section>
+                        <h4>Affectation de variables</h4>
+                        <div class="fragment">
+                            <strong>Affectation directe</strong>
+                            <pre><code>chaîne  = "blablabla"
+nombre   = 15
+flottant = 15.141
+booléen  = vrai</code></pre>
+                        </div>
+                        <div class="fragment">
+                            <strong>Affectation indirecte</strong>
+                            <pre><code>nombre1 = 23
+nombre2 = nombre1</code></pre>
+                        </div>
+                    </section>
+
+                    <!-- <section>
+                        <h4>Opérations sur les variables</h4>
+                        <div class="fragment">
+                            <strong>Opérations arithmétiques</strong>
+                            <pre><code>nombre1 = 5 * 2
+nombre2 = 12/3 
+nombre3 = (nombre1 + 10) / nombre2</code></pre>
+                        </div>
+                        <div class="fragment">
+                            <strong>Concaténation</strong>
+                            <pre><code>mot1 = "Hello"
+mot2 = "World"
+
+phrase = mot1 + " " + mot2</code></pre>
+                        </div>
+                    </section> -->
+
+
+
+                    <section>
+                        <h3>Les conditions</h3>
+                    </section>
+
+                    <section>
+                        <!-- <h4>Structures logiques</h4> -->
+                        <div class="fragment">
+                            <strong>SI</strong>
+                            <pre><code>pluie = vrai
+
+SI pluie ALORS
+    prendre un parapluie
+FIN SI</code></pre>
+                        </div>
+                        <div class="fragment">
+                            <strong>SINON</strong>
+                            <pre><code>pluie = vrai
+
+SI pluie ALORS
+    prendre un parapluie
+SINON
+    étendre le linge
+FIN SI</code></pre>
+                        </div>
+                        <div class="fragment">
+                            <strong>SINON SI</strong>
+                            <pre><code>pluie    = faux
+canicule = vrai
+
+SI pluie ALORS
+    prendre un parapluie
+SINON SI canicule ALORS
+    prendre un parasol
+FIN SI</code></pre>
+                    </section>
+
+                    <section>
+                        <h4>Opérateurs logiques</h4>
+                        <div class="fragment">
+                            <strong>Conjonction ("ET") et disjonction ("OU")</strong>
+                            <pre><code>neige = vrai
+vent  = faux
+
+SI vent ET neige ALORS
+    rester chez soi
+SINON SI vent OU neige ALORS
+    prendre un manteau
+FIN SI</code></pre>
+                        </div>
+                        <div class="fragment">
+                            <strong>Égalité, différence, supériorité et infériorité</strong>
+                            <pre><code>nombre = ?
+x = 10
+y = 100
+
+SI nombre >= x ALORS
+    AFFICHER "Le nombre est supérieur ou égal à 10"
+FIN SI
+
+SI nombre < y ALORS
+    AFFICHER "Le nombre est strictement plus petit que 100"
+FIN SI</code></pre>
+                    </section>
+
+
+
+                    <section>
+                        <h3>Les boucles</h3>
+                    </section>
+
+                    <section>
+                        <!-- <div class="fragment">
+                            <strong>TANT QUE</strong>
+                            <pre><code>x = 0
+
+TANT QUE x < 10
+    x = x + 1
+FIN TANT QUE</code></pre>
+                        </div>
+                        <div class="fragment">
+                            <strong>POUR</strong>
+                            <pre><code>y = 1
+
+POUR x DE 1 À 3
+    x = x + y
+FIN POUR</code></pre>
+          </div> -->
+          <div class="fragment">
+                            <strong>POUR CHAQUE</strong>
+                            <pre><code>liste = [10, 2, 3]
+valeur = 1
+POUR CHAQUE nombre DE liste
+    valeur = valeur * nombre
+FIN POUR CHAQUE</code></pre>
+          </div>
+
+                    <div class="fragment">
+                            <strong>Et d'autres : POUR, TANT QUE...</strong>
+                    </div>
+                    </section>
+
+
+                    <!-- <section>
+                        <h3>Les fonctions</h3>
+                    </section>
+
+                    <section>
+                        <div class="fragment">
+                            <strong>Sans argument</strong>
+                            <pre><code>FONCTION chiffre()
+    RETOURNER 5
+FIN FONCTION
+
+x = chiffre()</code></pre>
+                    </div>
+                        <div class="fragment">
+                            <strong>Avec argument</strong>
+                            <pre><code>FONCTION doubler(p)
+    r = p * 2
+    RETOURNER r
+FIN FONCTION
+
+x = doubler(12)</code></pre>
+                    </section> -->
+
+
+                </section>
+
+                <section>
+                    <section>
+                        <canvas id="mario_canvas"
+                                width="800"
+                                height="432"
+                                data-processing-sources=" sketch/mario/preloads.pde
+                                                          sketch/mario/codebase.pde
+                                                          sketch/mario/mario.pde
+                                                          sketch/mario/algo.pde
+
+                                                          sketch/mario/level/mariolevel.pde
+                                                          sketch/mario/level/levels_bonuslevel.pde
+                                                          sketch/mario/level/levels_darklevel.pde
+                                                          sketch/mario/level/levels_mainlevel.pde
+
+                                                          sketch/mario/layer/mariolayer.pde
+                                                          sketch/mario/layer/layers_background.pde
+                                                          sketch/mario/layer/layers_bonuslayer.pde
+                                                          sketch/mario/layer/layers_bonuslayer_bg.pde
+                                                          sketch/mario/layer/layers_colorlayer.pde
+                                                          sketch/mario/layer/layers_darklevellayer.pde
+                                                          sketch/mario/layer/layers_mainlayer.pde
+
+                                                          sketch/mario/actor/hero.pde
+
+                                                          sketch/mario/actor/enemy/enemy.pde
+                                                          sketch/mario/actor/enemy/enemy_banzaibill.pde
+                                                          sketch/mario/actor/enemy/enemy_bonustarget.pde
+                                                          sketch/mario/actor/enemy/enemy_koopa.pde
+                                                          sketch/mario/actor/enemy/enemy_muncher.pde
+
+                                                          sketch/mario/specials/specials_block.pde
+                                                          sketch/mario/specials/specials_keys.pde
+                                                          sketch/mario/specials/specials_tubes.pde
+                                                          sketch/mario/specials/pickups.pde
+                                                          sketch/mario/specials/triggers.pde"
+                                tabindex="1">
+                        </canvas>
+                        <small>
+                        <div style="float:left">
+                        <ul>
+                            <li>Informations (variables) connues :
+                                <ul>
+                                    <li>liste de monstres</li>
+                                    <li>la position horizontale et verticale de Mario et de chaque monstre</li>
+                                    <li>idem, mais à la <em>frame</em> précédente</li>
+                                    <li>si Mario a la clef</li>
+                                    <li>si Mario peut traverser une canalisation</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                        <ul style="text-align: right">
+                            <li>Actions (fonctions) possibles :
+                                <ul>
+                                    <li>courir à droite</li>
+                                    <li>courir à gauche</li>
+                                    <li>sauter</li>
+                                    <li>se baisser</li>
+                                </ul>
+                            </li>
+                        </ul>
+</small>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Language &amp; tutos :</h3>
+                        <div>processing.org</div>
+                        <div>processingjs.org</div>
+                        <br>
+                        <h3>Sources :</h3>
+                        <div>github.com/Pomax/Pjs-2D-Game-Engine</div>
+                        <div>github.com/bolaft/fdls</div>
+                    </section>
+                </section>
+            </div>
+
+        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="js/processing.js"></script>
+        <script type="text/javascript" src="js/processing-lazyload.js"></script>
+        <script type="text/javascript" src="js/minim.js"></script>
+        <script type="text/javascript" src="js/syntaxHighlight.js"></script>
+        <script type="text/javascript" src="js/canvasFocus.js"></script>
+            <script src="lib/js/head.min.js"></script>
+            <script src="js/reveal.min.js"></script>
+            <script>
+                Reveal.initialize({
+                    controls: true,
+                    progress: true,
+                    history: true,
+                    center: true,
+                    rollingLinks: false,
+
+                    theme: Reveal.getQueryHash().theme,
+                    transition: Reveal.getQueryHash().transition || 'linear',
+                    dependencies: [{
+                        src: 'lib/js/classList.js',
+                        condition: function() {
+                            return !document.body.classList;
+                        }
+                    }, {
+                        src: 'plugin/markdown/showdown.js',
+                        condition: function() {
+                            return !!document.querySelector('[data-markdown]');
+                        }
+                    }, {
+                        src: 'plugin/markdown/markdown.js',
+                        condition: function() {
+                            return !!document.querySelector('[data-markdown]');
+                        }
+                    }/*, {
+                        src: 'plugin/highlight/highlight.js',
+                        async: true,
+                        callback: function() {
+                            hljs.initHighlightingOnLoad();
+                        }
+                    }*/, {
+                        src: 'plugin/zoom-js/zoom.js',
+                        async: false,
+                        condition: function() {
+                            return !!document.body.classList;
+                        }
+                    }, {
+                        src: 'plugin/notes/notes.js',
+                        async: false,
+                        condition: function() {
+                            return !!document.body.classList;
+                        }
+                    }
+                    ]
+                });
+            </script>
+    </body>
+</html>

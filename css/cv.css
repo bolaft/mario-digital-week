@@ -1,0 +1,24 @@
+.top, .right, .left, .bottom {
+	position: fixed;
+	margin: 5%;
+}
+
+.top {
+	top: 50px;
+	right: 48%;
+}
+
+.right {
+	top: 48%;
+	right: 2%;
+}
+
+.bottom {
+	bottom: 2%;
+	left: 48%;
+}
+
+.left {
+	top: 48%;
+	left: 2%;
+}

@@ -1,0 +1,78 @@
+==============
+INSTRUCTIONS :
+==============
+
+mario court à droite 			mario.courirDroite()
+mario court à gauche 			mario.courirGauche()
+mario saute 					mario.sauter()
+mario se baisse 				mario.seBaisser()
+
+============
+PROPRIÉTÉS :
+============
+
+mario a la clef 				mario.aLaClef
+mario n'a pas la clef 			mario.aLaClef == false
+mario peut traverser 			mario.peutTraverser == false
+mario ne peut pas traverser 	mario.peutTraverser
+
+le x de mario 					mario.x
+le y de mario 					mario.y
+le x précédent de mario 		mario.precedent.x
+le y précédent de mario 		mario.precedent.y
+
+le x du monstre 				monstre.x
+le y du monstre 				monstre.y
+le x précédent du monstre 		monstre.precedent.x
+le y précédent du monstre 		monstre.precedent.y
+
+Version verbeuses : "la position horizontale précédente de mario", "la positoin verticale du monstre", etc.
+
+============
+OPÉRATEURS :
+============
+
+est vrai(e)						== true
+est fau(x/sse)					== false
+est égal(e) à					==
+est supérieur(e) à				>
+est supérieur(e) ou égal(e) à	>=
+est inférieur(e) ou égal(e) à	<=
+
+prend la valeur de 				=
+
+moins							-
+plus							+
+fois							*
+divisé(e) par					/
+
+et 								&&
+ou 								||
+
+si 								if (
+alors 							){
+sinon si 						} else if (
+sinon 							} else {
+fin si 							}
+
+pour chaque monstre 			i = 0; while (i < nombreDeMonstres) { monstre = monstres.get(i);
+fin pour						}
+
+===========
+VARIABLES :
+===========
+
+variable 	= false;
+variable1 	= false;
+variable2 	= false;
+
+variable3 	= null;
+variable4 	= null;
+
+entier 		= 0;
+entier1 	= 0;
+entier2 	= 0;
+
+flottant 	= 0.0;
+flottant1 	= 0.0;
+flottant2 	= 0.0;
